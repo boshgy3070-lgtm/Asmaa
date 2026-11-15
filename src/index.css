@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #070B14;
+    color: #F1F5F9;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+}
+
+/* Attractive Technical Blueprint Grid & Subtle Radial Glow */
+.tech-canvas-bg {
+  background-color: #070B14;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(6, 182, 212, 0.10), transparent 36%),
+    radial-gradient(circle at 84% 22%, rgba(16, 185, 129, 0.09), transparent 34%),
+    radial-gradient(circle at 50% 88%, rgba(59, 130, 246, 0.08), transparent 40%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body, .tech-canvas-bg {
+    background: white !important;
+    background-image: none !important;
+    color: #0F172A !important;
+  }
+  .print-card {
+    background: white !important;
+    color: #0F172A !important;
+    border-color: #CBD5E1 !important;
+  }
+  .print-break-after {
+    page-break-after: always;
+  }
+}
